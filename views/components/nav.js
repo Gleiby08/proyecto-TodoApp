@@ -85,6 +85,8 @@ if (window.location.pathname === '/') {
     createNavHome();
 } else if (window.location.pathname === '/signup/') {
     createNavSignup()
+} else if (window.location.pathname === '/login/') {
+    createNavLogin()
 }
 // agregar el evento de click al boton de menu mobile
 const navBtn = navbar.children[0].children[1];

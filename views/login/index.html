@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/output.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
   </head>
   <body class="bg-zinc-50">
     <nav
@@ -19,14 +20,10 @@
       <div class="hidden lg:flex w-2/4 justify-center items-center px-4">
         <img class="w-3/4" src="/images/signup.svg" alt="image" />
       </div>
-      <form
-        id="form"
-        class="flex pt-16 flex-col gap-4 bg-zinc-200 p-4 rounded-lg text-lg shadow-lg w-full md:w-9/12 lg:w-2/4"
-      >
+      <form id="form" class="flex pt-16 flex-col gap-4 bg-zinc-200 p-4 rounded-lg text-lg shadow-lg w-full md:w-9/12 lg:w-2/4">
+
         <div class="flex flex-col gap-2">
-          <label class="font-bold" for="email-input"
-            >Email <span class="text-red-500 text-zinc-900">*</span></label
-          >
+          <label class="font-bold" for="name-input">Email <span class="text-red-500 text-zinc-900">*</span></label>
           <input
             id="email-input"
             type="text"
@@ -36,7 +33,7 @@
           />
         </div>
         <div class="flex flex-col gap-2">
-          <label class="font-bold" for="password-input"
+          <label class="font-bold" for="name-input"
             >Contraseña <span class="text-red-500 text-zinc-900">*</span></label
           >
           <input
@@ -44,7 +41,6 @@
             type="password"
             name="password-input"
             autocomplete="off"
-            placeholder="Ingresa tu contraseña"
             class="rounded-lg p-2 bg-zinc-100 focus:outline-indigo-700"
           />
           <p id="error-text" class="text-sm text-red-600"></p>
@@ -58,5 +54,6 @@
       </form>
     </div>
     <script src="/components/nav.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -19,19 +19,20 @@ const PASSWORD_VALIDATION = /^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}$/;
 const NAME_VALIDATION =/^[A-Z\u00d1][a-zA-Z-ÿáéíóú\u00f1\u00d1]+(\s*[A-Z\u00d1][a-zA-Z-ÿáéíóú\u00f1\u00d1\s]*)$/;
 
 
-
-
 //Validations
 let nameValidation = false;
 let emailValidation = false;
 let passwordValidation = false;
 let matchValidation = false;
 
+//Funcion para validar los campos del formulario
+// y habilitar o deshabilitar el boton de enviar
 const validation = (input, regexValidation) => {
   formBtn.disabled =
     nameValidation && emailValidation && passwordValidation && matchValidation
       ? false
       : true;
+  // Cambiar el estilo del input dependiendo de la validacion
   if (input.value === '') {
     input.classList.remove('outline-red-700', 'outline-2', 'outline');
     input.classList.remove('outline-green-700', 'outline-2', 'outline');
@@ -69,24 +70,30 @@ matchInput.addEventListener('input', (e) => {
   validation(matchInput, matchValidation);
 });
 
+// enviar el formulario
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  //Validar los campos del formulario
   try {
     const newUser = {
       name: nameInput.value,
       email: emailInput.value,
       password: passwordInput.value,
     };
+    //Enviar el formulario al servidor
     const { data } = await axios.post('/api/users', newUser);
     createNotification(false, data);
     setTimeout(() => {
       notification.innerHTML = '';
     }, 5000);
-
+    
+    //Limpiar los campos del formulario
     nameInput.value = '';
     emailInput.value = '';
     passwordInput.value = '';
     matchInput.value = '';
+    
+    //Deshabilitar el boton de enviar
     validation(nameInput, false);
     validation(emailInput, false);
     validation(passwordInput, false);

@@ -1,5 +1,6 @@
-const textInfo = document.querySelector('#text-info');
 
+const textInfo = document.querySelector('#text-info');
+// Importing axios for making HTTP requests
 (async () => {
   try {
     const token = window.location.pathname.split('/')[3];

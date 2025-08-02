@@ -11,6 +11,7 @@ const usersRouter = require('./controllers/users');
 const loginRouter = require('./controllers/login');
 
 //conexion a la base de datos
+//mongoose.connect (es un metodo de moongose): conecta a la base de datos MongoDB usando la URI de prueba
 (async () => {
     try {
         // Conectar a la base de datos MongoDB usando la URI de prueba
@@ -22,6 +23,9 @@ const loginRouter = require('./controllers/login');
 })();
 
 //Configuracion de express
+//app.use (es un metodo de express): configura la aplicacion para que use los siguientes middlewares
+//cors (es un middleware de express permite que tu aplicación frontend (la página web donde se registran e inician sesión acceda a tu API backend que maneja los registros y los inicios de sesión 
+//cookieParser (es un middleware que permite leer las cookies de la peticion): permite leer las cookies de la peticion
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());

@@ -1,6 +1,6 @@
 // Configuración de la URL de la página según el entorno
 const PAGE_URL = process.env.NODE_ENV === 'production'
-    ? 'placeholder'
+    ? 'https://proyecto-todoapp-8zit.onrender.com'
     : 'http://localhost:3000'
 
 

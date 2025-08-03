@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
     "tailwind-build": "npx tailwindcss -i ./input.css -o ./views/styles/output.css --watch",
     "dev": "cross-env NODE_ENV=dev nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mariana G",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": { 
     "@tailwindcss/cli": "^4.1.11",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
@@ -17,6 +18,7 @@
     "dotenv": "^17.2.0",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.18.0",
     "mongoose": "^8.16.3",
     "morgan": "^1.10.0",
     "nodemailer": "^7.0.5",
